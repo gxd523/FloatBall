@@ -1,0 +1,29 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.demo.floatball">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <application
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="FloatBall"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".FloatService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":float" />
+    </application>
+</manifest>
